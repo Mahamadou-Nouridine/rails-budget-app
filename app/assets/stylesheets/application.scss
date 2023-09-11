@@ -1,4 +1,32 @@
-@import "bootstrap"
+
+@import "bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img-container {
+    width: 70px;
+    height: 70px;
+}
+
+.main-container{
+    max-width: 500px;
+    width: 100%;
+    min-width: 350px
+}
+
+.category-container {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+// .category-list {
+//     display: flex;
+// }
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
