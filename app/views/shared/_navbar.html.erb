@@ -1,0 +1,35 @@
+<nav class="navbar p-1 d-flex justify-content-between align-items-center sticky-top text-light">
+     <%case right_el%>
+        <%when "menu"%>
+            <button class="btn text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <h3><i class="bi bi-list"></i></h3>
+            </button>
+        <%when "back"%>
+            <h1><i class="bi bi-arrow-left-short"></i></h1>
+     <%end%>
+    <h1>
+        <%= title%>
+    </h1>
+     <%case left_el%>
+        <%when "search"%>
+            <h3>
+                <i class="bi bi-search"></i>
+            </h3>
+        <%when "login"%>
+            Log in
+        <%when "none"%>
+            <span class="none">none</span>
+     <%end%>
+</nav>
+
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      I will not close if you click outside of me.
+    </div>
+  </div>
+</div>

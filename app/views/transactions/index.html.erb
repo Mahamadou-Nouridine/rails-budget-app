@@ -1,0 +1,10 @@
+<%=render "shared/navbar", right_el: "menu", left_el: "none", title: "TRANSACTIONS"%>
+<div class="bg-secondary text-light"><span>Total Amount: $100, Total Items: 9</span></div>
+<%# <div class="category-list-container"> %>
+    <ul class="category-list d-flex flex-column align-items-center m-auto  p-3">
+        <%for a in 0..30 do%>
+            <%= render "transactions/shared/transaction"%>
+        <%end%>
+    </ul>
+<%# </div> %>
+
