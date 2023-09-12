@@ -1,0 +1,23 @@
+<%=render "shared/navbar", right_el: "back", left_el: "none", title: "DETAILS"%>
+<div class="bg-light m-3 p-2">
+    <div class="category-head d-flex align-items-center">
+        <div class="img-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/781/781760.png" class="img-thumbnail w-100 h-100" alt="icon">
+        </div>
+        <h3 class="ms-2">Mac Donalds</h3>
+    </div>
+
+    <h3 class="transactions-list-title my-3">Transactions:</h3>
+
+    <ul class="transactions-list d-flex flex-column ps-0">
+       <%for a in 0..10 do%>
+            <%= render "transactions/shared/transaction"%>
+        <%end%>
+    </ul>
+    <div class="d-flex justify-content-between total-amount">
+        <h3>TOTAL AMOUNT:</h3>
+        <h3>$100</h3>
+    </div>
+</div>
+<%=render "shared/add_new", type: "transaction"%>
+
