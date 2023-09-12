@@ -5,3 +5,38 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+10.times do |index|
+  User.create(
+    name: Faker::Name.name
+    # email: "email#{index}@email.com",
+    # password: "abcdef"
+  )
+end
+
+50.times do
+  Category.create(
+    name: Faker::Food.dish,
+    icon: Faker::Avatar.image,
+    user_id: User.all.sample.id
+  )
+end
+
+50.times do
+  Transaction.create(
+    name: Faker::Food.ingredient,
+    author: User.all.sample,
+    amount:Faker::Number.between(from: 1, to: 100),
+  )
+end
+
+50.times do
+  CategoryTransaction.create(
+    expense: Transaction.all.sample,
+    category_id: Category.all.sample.id,
+  )
+end
+
+puts  "#{Transaction.count} transactions, #{Category.count} categories, #{User.count} users and #{CategoryTransaction.count} category transactions are successfully created"

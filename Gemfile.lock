@@ -84,6 +84,8 @@ GEM
       reline (>= 0.3.1)
     erubi (1.12.0)
     execjs (2.8.1)
+    faker (3.2.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -211,6 +213,7 @@ DEPENDENCIES
   bootsnap
   bootstrap (~> 5.3)
   debug
+  faker (~> 3.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)
