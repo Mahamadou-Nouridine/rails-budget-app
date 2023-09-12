@@ -5,7 +5,22 @@
                 <h3><i class="bi bi-list"></i></h3>
             </button>
         <%when "back"%>
-            <h1><i class="bi bi-arrow-left-short"></i></h1>
+            <h1>
+              <%case title%>
+                <%when "DETAILS"%>
+                    <%=link_to "/" do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "New Transaction"%>
+                    <%=link_to category_path(params[:category_id]) do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "New Category"%>
+                    <%=link_to categorys_path do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+              <%end%>
+            </h1>
      <%end%>
     <h1>
         <%= title%>

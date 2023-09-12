@@ -2,7 +2,10 @@
 <%# <div class="category-list-container"> %>
     <ul class="category-list d-flex flex-column align-items-center m-auto  p-3">
         <%for a in 0..30 do%>
-            <%= render "category/shared/category"%>
+            <%=link_to "/categorys/1/", class:"w-100 link-to-item" do%>
+                <%= render "categorys/shared/category"%>
+            <%end%>
         <%end%>
     </ul>
 <%# </div> %>
+<%=render "shared/add_new", type: "category"%>

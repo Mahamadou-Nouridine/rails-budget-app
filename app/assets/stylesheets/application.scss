@@ -18,13 +18,14 @@
     width: 100%;
     min-width: 350px;
     height: 800px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .category-container {
     margin: auto;
     margin-bottom: 10px;
     width: 100%;
+    box-shadow: 1px 1px 3px #434b5429;
 }
 
 .navbar {
@@ -33,6 +34,75 @@
 
 .none {
     visibility: hidden;
+}
+
+.category-details {
+    color: #434b54ad;
+    margin-left: 0;
+}
+
+.category-details em{
+    color: #434b547d;
+}
+
+.category-details h3{
+    font-size: 20px;
+    color: #434b547d;
+}
+
+.category-total {
+    color: #434b54
+}
+
+.link-to-item {
+    text-decoration: none;
+}
+
+.category-head h3{
+    font-size: 20px;
+    color: #434b54;
+}
+.category-head{
+    border-bottom: solid #434b5417 1px;
+    padding-bottom: 10px;
+}
+
+.transactions-list-title {
+    color: #434b54;
+    font-size: 18px;
+}
+
+
+.transactions-list {
+    list-style-type: none;
+}
+
+.transaction-item {
+    border-bottom: solid #434b5417 1px;
+    padding-bottom: 10px;
+}
+
+.transaction-item h3{
+    color: #434b54a1;
+    font-size: 20px;
+}
+.transaction-item em{
+    color: #434b545f;
+    font-size: 15px;
+}
+
+.transaction-price {
+    color: #434b54;
+    font-size: 18px;
+}
+
+.total-amount {
+    color: #434b54ba;
+    font-size: 18px;
+}
+
+.add_new {
+    background-color: #5fb533;
 }
 
 // .category-list-container {

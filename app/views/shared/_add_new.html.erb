@@ -1,0 +1,11 @@
+<div class="sticky-bottom p-2 add_new">
+    <%if type == "category"%>
+        <%=link_to new_category_path do%>
+            <button type="button" class="btn btn-outline-light w-100 py-3">Add New Category</button>
+        <%end%>
+    <%else%>
+        <%=link_to new_category_transaction_path(1) do%>
+            <button type="button" class="btn btn-outline-light w-100 py-3">Add New Transaction</button>
+        <%end%>
+    <%end%>
+</div>
