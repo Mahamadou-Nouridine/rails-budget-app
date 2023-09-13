@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     current_uri = request.env['PATH_INFO']
     unless [auth_path, '/users/sign_in', '/users/sign_up', '/users/password/new',
-            user_password_path].include?(current_uri)
+            user_password_path, user_registration_path].include?(current_uri)
       redirect_to auth_path
     end
   end
