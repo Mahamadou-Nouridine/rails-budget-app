@@ -31,6 +31,7 @@
 
 .navbar {
   background-color: #3778c2;
+  z-index: 2;
 }
 
 .none {
@@ -126,6 +127,17 @@
   color: #434b54d7;
   font-family: 'Dancing Script', cursive;
   font-weight: 900;
+}
+
+.alert-component {
+  z-index: 100;
+}
+
+.alert-container {
+  position: absolute;
+  width: 100%;
+  max-width: 350px;
+  top: 30px;
 }
 
 
