@@ -9,7 +9,6 @@ class CategorysController < ApplicationController
   def show
     @category = Category.includes(:expenses).find(params[:id])
     @transactions = @category.expenses
-    # render 'show'
   end
 
   def new

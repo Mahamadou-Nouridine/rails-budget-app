@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  # before_action :set_variables
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
@@ -25,8 +24,4 @@ class ApplicationController < ActionController::Base
       user_params.permit(:email, :password, :password_confirmation, :name)
     end
   end
-
-  # def set_variables
-  #   @current_user = current_user
-  # end
 end

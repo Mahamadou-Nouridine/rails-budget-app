@@ -60,7 +60,6 @@
 
       <h3 class="sidebar-user-name text-center mt-3"><%=@current_user.name%></h3>
       <div class="text-center mt-5">
-        <%# <button class="btn btn-danger m-auto">Logout</button> %>
          <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-danger m-auto', method: :delete %>
       </div>
     </div>

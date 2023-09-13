@@ -1,5 +1,4 @@
 <%=render "shared/navbar", right_el: "menu", left_el: "search", title: "CATEGORIES"%>
-<%# <div class="category-list-container"> %>
     <ul class="category-list d-flex flex-column align-items-center m-auto  p-3">
         <%@categories.each do |category|%>
             <%=link_to category_path(category), class:"w-100 link-to-item" do%>
@@ -10,5 +9,4 @@
             <p>You don't have any registered category!</p>
          <%end%>
     </ul>
-<%# </div> %>
 <%=render "shared/add_new", type: "category"%>
