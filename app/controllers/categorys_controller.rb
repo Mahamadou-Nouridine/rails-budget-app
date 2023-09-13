@@ -3,10 +3,13 @@ class CategorysController < ApplicationController
     @title = 'Categories'
     @rigth_el = 'menu'
     @left_el = 'search'
+    @categories = Category.includes(:expenses).where(user_id: current_user.id)
   end
 
   def show
-    render 'show'
+    @category = Category.includes(:expenses).find(params[:id])
+    @transactions = @category.expenses
+    # render 'show'
   end
 
   def new

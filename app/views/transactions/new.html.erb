@@ -1,2 +1,13 @@
 <%=render "shared/navbar", right_el: "back", left_el: "none", title: "New Transaction"%>
-<h1>New Transaction creation</h1>
+<%= form_with model: @transaction, url: category_transactions_path(params[:category_id]), method: :post, local: true, scope: :transaction, class:"p-3 category-form" do |f|%>
+    <div class="mb-3">
+        <%= f.label :name, "Name", class:"form-label" %><br>
+        <%= f.text_field :name,  :required => true, class:"form-control", placeholder: "Enter the name of the transaction" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :amount, "Amount", class:"form-label" %><br>
+        <%= f.number_field :amount,  :required => true, class:"form-control", placeholder: "How much did the transaction cost" %>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+<%end%>
+

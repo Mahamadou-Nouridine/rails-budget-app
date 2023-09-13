@@ -10,9 +10,9 @@ require 'faker'
 
 10.times do |index|
   User.create(
-    name: Faker::Name.name
-    # email: "email#{index}@email.com",
-    # password: "abcdef"
+    name: Faker::Name.name,
+    email: "email#{index}@email.com",
+    password: "abcdef"
   )
 end
 

@@ -1,9 +1,9 @@
 <%=render "shared/navbar", right_el: "menu", left_el: "search", title: "CATEGORIES"%>
 <%# <div class="category-list-container"> %>
     <ul class="category-list d-flex flex-column align-items-center m-auto  p-3">
-        <%for a in 0..30 do%>
-            <%=link_to "/categorys/1/", class:"w-100 link-to-item" do%>
-                <%= render "categorys/shared/category"%>
+        <%@categories.each do |category|%>
+            <%=link_to category_path(category), class:"w-100 link-to-item" do%>
+                <%= render "categorys/shared/category", category: category%>
             <%end%>
         <%end%>
     </ul>
