@@ -20,9 +20,9 @@ class CategorysController < ApplicationController
     user = current_user
     @category = user.categorys.new(params.require(:category).permit(:name, :icon))
     if @category.save
-      redirect_to categorys_path, notice: "Category created successfully"
+      redirect_to categorys_path, notice: 'Category created successfully'
     else
-      redirect_to categorys_path, alert: "An error occured when creating the category"
+      redirect_to categorys_path, alert: 'An error occured when creating the category'
     end
   end
 end

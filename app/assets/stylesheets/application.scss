@@ -109,19 +109,21 @@
 }
 
 .user-avatar {
-    width: 200px;
-    height: 200px;
-}
-.user-avatar img{
-    width: 100%;
-    background-color: #3778c2;
-    border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
-.sidebar-user-name, .forgot-pass {
-    color: #434b54ba;
-    font-size: 18px;
-  }
+.user-avatar img {
+  width: 100%;
+  background-color: #3778c2;
+  border-radius: 50%;
+}
+
+.sidebar-user-name,
+.forgot-pass {
+  color: #434b54ba;
+  font-size: 18px;
+}
 
 .auth-title {
   color: #434b54d7;
@@ -139,9 +141,6 @@
   max-width: 350px;
   top: 30px;
 }
-
-
-
 
 // .category-list-container {
 

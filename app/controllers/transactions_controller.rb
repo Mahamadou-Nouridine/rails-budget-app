@@ -10,9 +10,9 @@ class TransactionsController < ApplicationController
     @category_transaction = CategoryTransaction.new(expense: @transaction, category_id: params[:category_id])
 
     if @transaction.save && @category_transaction.save
-      redirect_to category_path(params[:category_id]), notice: "Transaction created successfully"
+      redirect_to category_path(params[:category_id]), notice: 'Transaction created successfully'
     else
-      redirect_to category_path(params[:category_id]), alert: "An error occured when creating the transaction"
+      redirect_to category_path(params[:category_id]), alert: 'An error occured when creating the transaction'
     end
   end
 end
