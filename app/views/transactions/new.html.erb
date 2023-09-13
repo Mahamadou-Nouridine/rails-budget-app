@@ -1,5 +1,5 @@
 <%=render "shared/navbar", right_el: "back", left_el: "none", title: "New Transaction"%>
-<%= form_with model: @transaction, url: category_transactions_path(params[:category_id]), method: :post, local: true, scope: :transaction, class:"p-3 category-form" do |f|%>
+<%= form_with model: @transaction, url: category_transactions_path(params[:category_id]), method: :post, local: true, scope: :transaction, class:"p-3" do |f|%>
     <div class="mb-3">
         <%= f.label :name, "Name", class:"form-label" %><br>
         <%= f.text_field :name,  :required => true, class:"form-control", placeholder: "Enter the name of the transaction" %>

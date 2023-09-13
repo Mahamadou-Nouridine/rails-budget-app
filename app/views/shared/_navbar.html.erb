@@ -23,6 +23,10 @@
                     <%=link_to auth_path do%>
                       <i class="bi bi-arrow-left-short text-light"></i>
                     <%end%>
+                <%when "Forgot Password"%>
+                    <%=link_to "/users/sign_in" do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
               <%end%>
             </h1>
      <%end%>
@@ -43,19 +47,22 @@
      <%end%>
 </nav>
 
-<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="staticBackdropLabel">Profile</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div class="user-avatar m-auto d-flex justify-content-center align-items-center">
-      <img src="https://robohash.org/rerumetqui.png?size=300x300&set=set1">
+<%if @current_user.present?%>
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="staticBackdropLabel">Profile</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <div class="offcanvas-body">
+      <div class="user-avatar m-auto d-flex justify-content-center align-items-center">
+        <img src="https://robohash.org/rerumetqui.png?size=300x300&set=set1">
+      </div>
 
-    <h3 class="sidebar-user-name text-center mt-3"><%=@current_user.name%></h3>
-    <div class="text-center mt-5">
-      <button class="btn btn-danger m-auto">Logout</button>
+      <h3 class="sidebar-user-name text-center mt-3"><%=@current_user.name%></h3>
+      <div class="text-center mt-5">
+        <%# <button class="btn btn-danger m-auto">Logout</button> %>
+         <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-danger m-auto', method: :delete %>
+      </div>
     </div>
   </div>
-</div>
+<%end%>
