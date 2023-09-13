@@ -1,6 +1,7 @@
 
 @import "bootstrap";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 * {
   margin: 0;
@@ -119,6 +120,12 @@
 .sidebar-user-name {
     color: #434b54ba;
     font-size: 18px;
+  }
+
+.auth-title {
+  color: #434b54d7;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 900;
 }
 
 
