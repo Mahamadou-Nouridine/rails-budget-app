@@ -1,20 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "Categories", type: :request do
+RSpec.describe 'Categories', type: :request do
   include Devise::Test::IntegrationHelpers
-
 
   before(:each) do
     @user = User.create(name: 'Nouridine', email: 'nouridine@gmail.com', password: 'abcdef')
     sign_in @user
   end
 
-  describe "GET /categorys" do
+  describe 'GET /categorys' do
     before do
-      get "/"
+      get '/'
     end
 
-    it "returns a success status" do
+    it 'returns a success status' do
       expect(response).to have_http_status(200)
     end
 
@@ -29,7 +28,7 @@ RSpec.describe "Categories", type: :request do
 
   describe 'GET /create' do
     before do
-      get "/categorys/new"
+      get '/categorys/new'
     end
 
     it 'Returns a success link' do
@@ -47,7 +46,9 @@ RSpec.describe "Categories", type: :request do
 
   describe 'GET /categorys/:id (:show)' do
     before do
-      @category = @user.categorys.create(icon:"https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg", name: "Macdo")
+      @category = @user.categorys.create(
+        icon: 'https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg', name: 'Macdo'
+      )
       get "/categorys/#{@category.id}/"
     end
     it 'Displays a success' do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Transaction, type: :model do
-  let (:user) {User.create(name: 'Nouridine', email: 'nouridine@gmail.com', password: 'abcdef')}
+  let(:user) { User.create(name: 'Nouridine', email: 'nouridine@gmail.com', password: 'abcdef') }
   let(:transaction) { Transaction.new(name: 'Macdo', author: user, amount: 20) }
 
   it 'the transaction should be valid' do
