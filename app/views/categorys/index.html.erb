@@ -6,6 +6,9 @@
                 <%= render "categorys/shared/category", category: category%>
             <%end%>
         <%end%>
+        <%if @categories.empty?%>
+            <p>You don't have any registered category!</p>
+         <%end%>
     </ul>
 <%# </div> %>
 <%=render "shared/add_new", type: "category"%>
