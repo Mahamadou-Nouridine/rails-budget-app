@@ -1,0 +1,8 @@
+<%categories.each do |category|%>
+    <div class="form-check">
+        <input name="categorys[]"" class="form-check-input" type="checkbox"  <%="checked disabled" if category.id.to_s == params[:category_id]%> id="flexCheckChecked" value=<%=category.id%>>
+        <label class="form-check-label" for="flexCheckChecked">
+            <%=category.name%>
+        </label>
+    </div>
+<%end%>

@@ -1,0 +1,65 @@
+<%=render "shared/navbar", right_el: "back", left_el: "none", title: "New Category"%>
+
+<%= form_with model: @category, url: categorys_path, method: :post, local: true, scope: :category, class:"p-3 category-form" do |f|%>
+    <div class="mb-3">
+        <%= f.label :name, "Name", class:"form-label" %><br>
+        <%= f.text_field :name,  :required => true, class:"form-control", placeholder: "Enter the name of the category" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :icon, "Icon", class:"form-label" %><br>
+        <%= f.text_field :icon,  :required => true, class:"form-control icon-input" %>
+        <div id="icon-error" class="form-text d-none"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+<%end%>
+
+<script>
+    const iconError = document.querySelector("#icon-error");
+const iconInput = document.querySelector(".icon-input");
+const categoryForm = document.querySelector(".category-form");
+
+const showMessage = (succes) => {
+  if (succes) {
+    iconError.classList.remove("text-danger");
+    iconError.classList.add("text-success");
+    iconError.classList.remove("d-none");
+    iconError.textContent = "Your url is a valid image url";
+  } else {
+    iconError.classList.remove("text-success");
+    iconError.classList.add("text-danger");
+    iconError.classList.remove("d-none");
+    iconError.textContent = "Please provide an image link";
+  }
+
+  const t = setTimeout(() => {
+    iconError.classList.add("d-none");
+    clearTimeout(t);
+  }, 5000);
+};
+
+function isImgUrl(url) {
+  const img = new Image();
+  img.src = url;
+  return new Promise((resolve) => {
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+  });
+}
+
+let urlTest = false;
+
+  console.log("First");
+  iconInput.addEventListener("change", async (e) => {
+    urlTest = await isImgUrl(e.target.value);
+    showMessage(urlTest);
+  });
+
+  console.log("seond");
+  console.log(window.location);
+  //prevent the form from being submited if the link is not an image lintk
+  categoryForm.addEventListener("submit", async (e) => {
+    if (!urlTest) e.preventDefault();
+    console.log(urlTest);
+  });
+
+</script>

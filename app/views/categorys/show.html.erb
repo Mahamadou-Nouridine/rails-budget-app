@@ -1,0 +1,26 @@
+<%=render "shared/navbar", right_el: "back", left_el: "none", title: "DETAILS"%>
+<div class="bg-light m-3 p-2">
+    <div class="category-head d-flex align-items-center">
+        <div class="img-container">
+            <img src=<%=@category.icon%> class="img-thumbnail w-100 h-100" alt="icon">
+        </div>
+        <h3 class="ms-2"><%=@category.name%></h3>
+    </div>
+
+    <h3 class="transactions-list-title my-3">Transactions:</h3>
+
+    <ul class="transactions-list d-flex flex-column ps-0">
+       <%@transactions.each do |transaction|%>
+            <%= render "transactions/shared/transaction", transaction: transaction%>
+        <%end%>
+    </ul>
+    <%if @transactions.empty?%>
+        <p>This Category is empty!</p>
+    <%end%>
+    <div class="d-flex justify-content-between total-amount">
+        <h3>TOTAL AMOUNT:</h3>
+        <h3>$<%=@transactions.sum(:amount)%></h3>
+    </div>
+</div>
+<%=render "shared/add_new", type: "transaction"%>
+

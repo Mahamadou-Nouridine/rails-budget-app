@@ -1,0 +1,67 @@
+<nav class="navbar p-1 d-flex justify-content-between align-items-center sticky-top text-light">
+     <%case right_el%>
+        <%when "menu"%>
+            <button class="btn text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                <h3><i class="bi bi-list"></i></h3>
+            </button>
+        <%when "back"%>
+            <h1>
+              <%case title%>
+                <%when "DETAILS"%>
+                    <%=link_to "/" do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "New Transaction"%>
+                    <%=link_to category_path(params[:category_id]) do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "New Category"%>
+                    <%=link_to categorys_path do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "LOGIN", "REGISTER"%>
+                    <%=link_to auth_path do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+                <%when "Forgot Password"%>
+                    <%=link_to "/users/sign_in" do%>
+                      <i class="bi bi-arrow-left-short text-light"></i>
+                    <%end%>
+              <%end%>
+            </h1>
+     <%end%>
+    <h1>
+        <%= title%>
+    </h1>
+     <%case left_el%>
+        <%when "search"%>
+            <h3>
+                <i class="bi bi-search"></i>
+            </h3>
+        <%when "Log in"%>
+            Log in
+        <%when "Next"%>
+            Next
+        <%when "none"%>
+            <span class="none">none</span>
+     <%end%>
+</nav>
+
+<%if @current_user.present?%>
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="staticBackdropLabel">Profile</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="user-avatar m-auto d-flex justify-content-center align-items-center">
+        <img src="https://robohash.org/rerumetqui.png?size=300x300&set=set1">
+      </div>
+
+      <h3 class="sidebar-user-name text-center mt-3"><%=@current_user.name%></h3>
+      <div class="text-center mt-5">
+         <%= button_to 'Logout', destroy_user_session_path, class: 'btn btn-danger m-auto', method: :delete %>
+      </div>
+    </div>
+  </div>
+<%end%>

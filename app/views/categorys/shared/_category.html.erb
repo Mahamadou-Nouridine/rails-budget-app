@@ -1,0 +1,19 @@
+<div class="category-container bg-light d-flex justify-content-between align-items-around p-2">
+    <div class="img-container">
+        <img src= <%=category.icon%> class="img-thumbnail w-100 h-100" alt="icon">
+    </div>
+    <div class="category-details">
+        <h3>
+            <%=category.name%>
+        </h3>
+
+        <em>14 April 2014</em>
+    </div>
+
+    <div class="category-total">
+        <h4>
+            $<%=category.expenses.sum(:amount)%>
+        </h4>
+
+    </div>
+</div>
