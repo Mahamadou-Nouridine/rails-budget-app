@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
+    @category = Category.find(params[:category_id])
   end
 
   def create

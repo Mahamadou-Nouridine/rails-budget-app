@@ -10,7 +10,7 @@
     </div>
 
     <p class="choose-categories-title">Choose categories</p>
-    <em class="choose-categories-note">Mcdo is by default selected</em>
+    <em class="choose-categories-note"><%=@category.name%> is by default selected</em>
     <div class="mb-3 category-selects">
         <%= render "transactions/shared/select_form", categories: current_user.categorys%>
     </div>
