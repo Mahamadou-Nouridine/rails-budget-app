@@ -141,3 +141,19 @@
   max-width: 350px;
   top: 30px;
 }
+
+.category-selects {
+  max-height: 100px;
+  height: 100%;
+  overflow-y: scroll;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.462);
+}
+
+.choose-categories-title {
+  margin-bottom: 0;
+}
+
+.choose-categories-note {
+  font-size: 12px;
+  color: #434b54d7;
+}
